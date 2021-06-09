@@ -1,40 +1,15 @@
-// import React, { Component } from 'react';
-import '../styles.css';
 import React from 'react';
+import PropTypes from 'prop-types';
+import '../styles.css';
 
-// class LoadMoreButton extends Component {
-//   componentDidMount() {
-//     window.scrollTo({
-//       top: document.documentElement.scrollHeight,
-//       behavior: 'smooth',
-//     });
-//   }
+const LoadMoreButton = ({ loadMore }) => (
+  <button type="button" className="Button" onClick={() => loadMore()}>
+    Load more
+  </button>
+);
 
-//   render() {
-//     return (
-//       <button
-//         type="button"
-//         className="Button"
-//         onClick={() => this.props.loadMore()}
-//       >
-//         Load more
-//       </button>
-//     );
-//   }
-// }
+export default LoadMoreButton;
 
-// export default LoadMoreButton;
-
-export default function LoadMoreButton(props) {
-  React.useEffect(() => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: 'smooth',
-    });
-  }, []);
-  return (
-    <button type="button" className="Button" onClick={props.loadMore}>
-      Load more
-    </button>
-  );
-}
+LoadMoreButton.protoType = {
+  loadMore: PropTypes.func.isRequired,
+};

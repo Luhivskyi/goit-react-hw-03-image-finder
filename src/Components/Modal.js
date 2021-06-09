@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 class Modal extends Component {
   static propTypes = {
+    largeUrl: PropTypes.string.isRequired,
     onClose: PropTypes.func.isRequired,
   };
 
